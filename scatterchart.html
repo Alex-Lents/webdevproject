@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>Scatter Chart</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+  </head>
+  <body>
+    <ul class="topnav">
+      <li><a href="home.html"><img class="visyoualizelogosmall" src="Visyoualizelogosmall.png" alt="Logo of visualize that links to the home page."></a></li>
+      <li><a class="navli" href="barchart.html">Bar Charts</a></li>
+      <li><a class="navli" href="columnchart.html">Column Charts</a></li>
+      <li><a class="navli" href="linechart.html">Line Charts</a></li>
+      <li><a class="navli" href="piechart.html">Pie Charts</a></li>
+      <li><a class="navlicurrent" href="scatterchart.html">Scatter Charts</a></li>
+      <li><a class="navli" href="comparison.html">Comparison and Extra Tips</a></li>
+    </ul>
+    <img class="topimg" src="ScatterChart.png" alt="An x-axis lists the chronological month numbers of the year. On the other axis is a range of values representing total sales of smoothies in thousands of dollars, and yellow dots are plotted at the same horizontal location as the month numbers at different amounts of sales, indicating that during that month that amount of sales of smooties was made.">
+    <h1>Scatter Chart</h1>
+    <p class="descvis">Scatter charts are best at comparing two different <strong>quantitative variables</strong>, or variables whose magnitude can be measured with numbers. They work especially well when showing the frequency of data values around certain areas, as the points will be more dense, a phenomenon that is easily noticeable. An exception to this is if one of the variables is time, in which case there is an even better visualization for.</p>
+    <h2>Example</h2>
+    <!-- Chart -->
+    <div class="chartCard">
+      <div class="chartBox">
+        <canvas id="demoChart"></canvas>
+      </div>
+    </div>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/chart.js/dist/chart.umd.min.js"></script>
+    <script>
+    // setup 
+    const data = {
+      labels: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'],
+      datasets: [{
+        label: 'Weekly Sales',
+        data: [  
+          {x:50, y:7},
+          {x:60, y:8},
+          {x:70, y:8},
+          {x:80, y:9},
+          {x:90, y:9},
+          {x:100, y:9},
+          {x:110, y:10},
+          {x:120, y:11},
+          {x:130, y:14},
+          {x:140, y:14},
+          {x:150, y:15}],
+        backgroundColor: [
+          'rgba(54, 162, 235, 0.4)',
+          'rgba(54, 162, 235, 0.4)',
+          'rgba(54, 162, 235, 0.4)',
+          'rgba(54, 162, 235, 0.4)',
+          'rgba(54, 162, 235, 0.4)',
+          'rgba(54, 162, 235, 0.4)',
+          'rgba(54, 162, 235, 0.4)'
+        ],
+        pointRadius: 5,
+
+        borderColor: "rgba(54, 162, 235, 0.4)"
+      }]
+    };
+
+    // config 
+    const config = {
+      type: 'scatter',
+      data,
+      options: {
+        indexAxis: 'x',
+        scales: {
+          y: {
+            beginAtZero: true
+          }
+        }
+      }
+    };
+
+    // render init block
+    const demoChart = new Chart(
+      document.getElementById('demoChart'),
+      config
+    );
+
+    // Instantly assign Chart.js version
+    const chartVersion = document.getElementById('chartVersion');
+    chartVersion.innerText = Chart.version;
+    </script>
+    <h2>Further Information</h2>
+    <a class="external" href="https://www.atlassian.com/data/charts/what-is-a-scatter-plot">Atlassian - A complete guide to scatter plots</a>
+    <p class="disclaimer">Top image is a screenshot of a self-made chart from Microsoft Power BI. Created by Alex Lents.</p>
+  </body>
+</html>

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>Bar Chart</title>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+  </head>
+  <body>
+    <ul class="topnav">
+      <li><a href="https://www.atlassian.com/data/charts/what-is-a-scatter-plot"><img class="visyoualizelogosmall" src="C:\Users\alexl\OneDrive\Pictures\Visyoualizelogo.png" alt="Logo of visualize that links to the home page"></a></li>
+      <li><a class="navlicurrent" href="https://www.atlassian.com/data/charts/what-is-a-scatter-plot">Bar Charts</a></li>
+      <li><a class="navli" href="https://www.atlassian.com/data/charts/what-is-a-scatter-plot">Column Charts</a></li>
+      <li><a class="navli" href="https://www.atlassian.com/data/charts/what-is-a-scatter-plot">Line Charts</a></li>
+      <li><a class="navli" href="https://www.atlassian.com/data/charts/what-is-a-scatter-plot">Pie Charts</a></li>
+      <li><a class="navli" href="https://www.atlassian.com/data/charts/what-is-a-scatter-plot">Scatter Charts</a></li>
+      <li><a class="navli" href="https://www.atlassian.com/data/charts/what-is-a-scatter-plot">Comparison and Extra Tips</a></li>
+    </ul>
+    <img class="barimg" src="C:\Users\alexl\OneDrive\Pictures\BarChart.png" alt="A y-axis gives the names of different distribution centers during 2018, with a horizontal purple bar representing each distribution center that year. On the other axis is a range of values representing time to deliver, and the bars stretch to be level with certain values, indicating that a given distribution center in 2018 had that time to deliver.">
+    <h1>Bar Chart</h1>
+    <p class="descvis">Bar charts are best for representing <strong>categorical data</strong>, or data which can be separated into groups. Humans are very good at using length to distinguish objects from each other, and bar charts make great use of this by having longer bars mean larger values for the category. Compared to column charts, bar charts project horizontally rather than vertically. </p>
+    <h2>Example</h2>
+    <p>Choose values in the fields below to create a graph</p>
+    <p>
+      First X Coordinate: <input type="number" onkeyup="updateChart(this)" class="numinput" min="1" max="12" id="barx1">
+      First Y Coordinate: <input type="number" onkeyup="updateChart(this)" class="numinput" min="1" max="12" id="bary1">
+      Second X Coordinate: <input type="number" onkeyup="updateChart(this)" class="numinput" min="1" max="12" id="barx2">
+      Second Y Coordinate: <input type="number" onkeyup="updateChart(this)" class="numinput" min="1" max="12" id="bary2">
+      Third X Coordinate: <input type="number" onkeyup="updateChart(this)" class="numinput" min="1" max="12" id="barx3">
+      Third Y Coordinate: <input type="number" onkeyup="updateChart(this)" class="numinput" min="1" max="12" id="bary3">
+      Fourth X Coordinate: <input type="number" onkeyup="updateChart(this)" class="numinput" min="1" max="12" id="barx4">
+      Fourth Y Coordinate: <input type="number" onkeyup="updateChart(this)" class="numinput" min="1" max="12" id="bary4">
+    </p>
+    <canvas id="BarChart"></canvas>
+    <script
+      src="https://cdn.jsdelivr.net/npm/chart.js@4.5.1/dist/chart.umd.min.js">
+    </script>
+    <script>
+      const data = {
+        labels: [1, 2, 3, 4, 5],
+        datasets: [{
+          data: [20, 20, 20, 30, 10],
+          label: 'Value'
+        }]
+      }
+      const ctx = document.querySelector('#BarChart');
+
+      const BarChart = new Chart(
+        ctx,
+        {
+          type: 'bar',
+          data
+        }
+
+      )
+
+      function updateChart(barvalues) {
+        console.log(barvalues.value)
+        BarChart.config.data.datasets[0].data[0] = barvalues.value;
+        BarChart.update();
+      }
+    </script>
+    <h2>Further Information</h2>
+    <a class="external" href="https://www.atlassian.com/data/charts/bar-chart-complete-guide">Atlassian - A complete guide to bar charts</a>
+  </body>
+</html>

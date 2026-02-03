@@ -1,0 +1,74 @@
+.topnav {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #bdbdbd;
+}
+
+.navli {
+    float: left;
+    color: black;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-family: arial;
+}
+
+.navlicurrent {
+    float: left;
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-family: arial;
+    background-color: blue;
+}
+
+.visyoualizelogo {
+    float: left;
+}
+
+h1 {
+    font-family: tahoma;
+}
+
+h2 {
+    font-family: tahoma;
+}
+
+.descvis{
+    font-family: arial;
+
+}
+
+.external{
+    color: black;
+    text-decoration: none;
+    font-family: arial;
+}
+
+.navli:hover {
+    background-color: #a3a3a3;
+}
+
+.external:hover {
+    color: blue;
+}
+
+.visyoualizelogo {
+    float: center;
+}
+
+.descmain {
+    font-family: arial;
+    float: center;
+}
+
+table {
+    float: center;
+}
+th {
+    float: center;
+}
